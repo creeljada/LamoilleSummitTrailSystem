@@ -12,17 +12,53 @@
         <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
         <link rel="stylesheet" href="assets/css/leaflet.photon.css">
         <style>
-        html, body, #map {
-            width: 100%;
+        html, body {
             height: 100%;
-            padding: 0;
             margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+        }
+        .header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 16px 24px;
+            font-size: 1.5em;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .container {
+            display: flex;
+            height: calc(100vh - 56px);
+        }
+        .sidebar {
+            width: 320px;
+            background: #fff;
+            padding: 24px 16px;
+            box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+            overflow-y: auto;
+        }
+        #map {
+            flex: 1;
+            height: 100%;
         }
         </style>
-        <title></title>
+        <title>Lamoille Summit Trail System</title>
     </head>
     <body>
-        <div id="map">
+        <div class="header">Lamoille Summit Trail System</div>
+        <div class="container">
+            <div class="sidebar">
+                <h2>Trail System Info</h2>
+                <p>Explore the Lamoille Summit Trail System map. Use the controls to view different basemaps and trail layers.</p>
+                <ul>
+                    <li>USGS Topo and OpenTopoMap basemaps</li>
+                    <li>Interactive trail layers</li>
+                    <li>Popups with details</li>
+                </ul>
+                <p style="font-size:0.9em;color:#888;">Powered by Leaflet & QGIS2Web</p>
+            </div>
+            <div id="map"></div>
         </div>
         <script src="src/js/qgis2web_expressions.js"></script>
         <script src="src/js/leaflet.js"></script>
